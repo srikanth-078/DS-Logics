@@ -45,6 +45,7 @@ void main(){
                 display(arr, count);
                 break;
             case 3:
+                printf("Thank you..");
                 exit(1); //exit the while loop or looping.
             default:
                 printf("Enter correct option.");
