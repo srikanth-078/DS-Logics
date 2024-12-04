@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 5
-    int k = 0;
+
     void insert(int value, int **arr, int *count, int *size){
 
         if(*count + 1 >= *size){
