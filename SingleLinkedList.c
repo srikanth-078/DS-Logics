@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//Single Linked list Initialization.
 struct node{
     int data;
     struct node *next;
 };
 struct node* head = NULL;
 
+//Single Linked list creation.
 struct node* create(int data){
     struct node *nn = malloc(sizeof(struct node));
     if(nn == NULL){
@@ -18,6 +20,7 @@ struct node* create(int data){
     return nn;
 }
 
+//Insertion Function at Beginning.
 void insertBig(){
     int data;
     printf("Enter to insert:");
@@ -28,6 +31,7 @@ void insertBig(){
     printf("inserted suc.%d\n",head->data);
 }
 
+//Insertion Function at End of the Linked List.
 void insertEnd(int data){
     struct node* nn = create(data);
     if (head == NULL) {
@@ -42,6 +46,7 @@ void insertEnd(int data){
     printf("Successfully inserted at end.\n");
 }
 
+//Display Function.
 void display(){
     struct node* temp = head;
     printf("values are:\n");
@@ -52,6 +57,7 @@ void display(){
     printf("NULL\n");
 }
 
+//Inserting after an Element(Must entering existing element)
 void insertNAfter(int key,int data){
     struct node *keyAfter = head,*nn = create(data),*p;
     while(keyAfter!=NULL && keyAfter->data!=key){
@@ -67,6 +73,7 @@ void insertNAfter(int key,int data){
     printf("sucsses.");
 }
 
+//Inserting before an Element(Must entering existing element)
 void insertNBefore(int key,int val){
     struct node *keyBefore = head,*nn = create(val),*p,*temp = NULL;
     while(keyBefore!=NULL && keyBefore->data != key){
@@ -86,6 +93,7 @@ void insertNBefore(int key,int val){
     printf("sucsses.");
 }
 
+//Deleting Entaire List.
 void deletelist(int delKey){
     struct node *del = head,*correct;
     while(del!=NULL && del->data!=delKey){
@@ -101,6 +109,7 @@ void deletelist(int delKey){
     }
 }
 
+//Sorting the List.(Actually the Linked list converted in to array that array will be sorted by bouble sort algo.)
 void sortArray(int *arr,int n){
     for(int i = 0; i < n - 1 ; i++){
         for(int j = 0; j < n - i - 1; j++){
@@ -113,6 +122,7 @@ void sortArray(int *arr,int n){
     }
 }
 
+//frees the list.
 void freeList(struct node *head) {
     struct node *tmp;
     while (head != NULL) {
@@ -121,7 +131,7 @@ void freeList(struct node *head) {
         free(tmp);
     }
 }
-
+//List converted into Array.
 void sortlist(){
     struct node *sort = head;
     int size = 0;
@@ -156,7 +166,7 @@ head = NULL;
     printf("successfuly sorted.");
 }
 
-///insert values at position.
+///insert values at Specific position(by Index).
 void insertPos(int data,int pos){
     struct node *insPos = head, *nn = create(data),*curr;
     int i = 1;
